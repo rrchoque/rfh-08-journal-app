@@ -1,3 +1,4 @@
+import { Google } from "@mui/icons-material";
 import { Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -49,7 +50,8 @@ export const LoginPage = () => {
               </Grid>
               <Grid item xs={ 12 } sm={ 6 }>
                 <Button variant='contained' fullWidth>
-                  Google
+                  <Google />
+                  <Typography sx={{ ml: 1 }}>Google</Typography>
                 </Button>
               </Grid>
             </Grid>
