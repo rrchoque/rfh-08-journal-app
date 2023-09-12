@@ -1,5 +1,5 @@
 import { singInWithGoogle } from '../../firebase/providers';
-import { checkingCredentials, login } from './';
+import { checkingCredentials, login, logout } from './';
 
 export const checkingAuthentication = () => {
     return async( dispatch ) => {
