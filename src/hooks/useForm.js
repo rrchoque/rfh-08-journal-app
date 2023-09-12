@@ -44,8 +44,6 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
         setFormValidation( formCheckedValues );
     }
 
-
-
     return {
         ...formState,
         formState,
