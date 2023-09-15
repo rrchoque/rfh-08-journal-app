@@ -4,6 +4,7 @@ import { StarOutline } from '@mui/icons-material';
 export const NothingSelectedView = () => {
   return (
     <Grid
+      className='animate__animate animate__fadeIn animate__faster'
       container
       spacing={ 0 }
       direction="column"
