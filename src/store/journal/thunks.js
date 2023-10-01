@@ -11,8 +11,8 @@ export const startNewNote = () => {
         const { uid } = getState().auth;
 
         const newNote = {
-            title: 'Nota Número 1',
-            body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            title: '',
+            body: '',
             date: new Date().getTime(),
         }
 
