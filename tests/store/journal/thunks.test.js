@@ -17,19 +17,16 @@ describe('Pruebas en Journal Thunks', () => {
 
         await startNewNote()( dispatch, getState );
 
+        const modelNote = {
+            body: '',
+            title:'',
+            id: expect.any( String ),
+            date: expect.any( Number ),
+        }
+
         expect( dispatch ).toHaveBeenCalledWith( savingNewNote() );
-        expect( dispatch ).toHaveBeenCalledWith( addNewEmptyNote({
-            body: '',
-            title:'',
-            id: expect.any( String ),
-            date: expect.any( Number ),
-        }));
-        expect( dispatch ).toHaveBeenCalledWith( setActiveNote({
-            body: '',
-            title:'',
-            id: expect.any( String ),
-            date: expect.any( Number ),
-        }));
+        expect( dispatch ).toHaveBeenCalledWith( addNewEmptyNote( modelNote ));
+        expect( dispatch ).toHaveBeenCalledWith( setActiveNote(modelNote));
 
         // Borrar de firebase
         const collectionRef = collection( FirebaseDB, `${ uid }/journal/notes`);
@@ -38,6 +35,5 @@ describe('Pruebas en Journal Thunks', () => {
         const deletePromises = [];
         docs.forEach( doc => deletePromises.push( deleteDoc( doc.ref ) ) );
         await Promise.all( deletePromises );
-        
-    });
+    }, 10000);
 });
