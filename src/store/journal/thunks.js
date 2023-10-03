@@ -19,9 +19,6 @@ export const startNewNote = () => {
         const newDoc = doc( collection( FirebaseDB, `${ uid }/journal/notes`) );
         await setDoc( newDoc, newNote );
 
-
-        console.log(newDoc);
-
         newNote.id = newDoc.id;  
 
         //! dispatch
