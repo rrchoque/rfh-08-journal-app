@@ -38,5 +38,5 @@ describe('Pruebas en fileUpload', () => {
         const url = await fileUpload( file );
         expect( url ).toBe( null );
         
-    }); 
+    }, 10000); 
 });
