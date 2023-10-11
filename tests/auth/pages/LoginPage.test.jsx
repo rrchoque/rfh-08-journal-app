@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { authSlice } from '../../../src/store/auth';
 import { MemoryRouter } from 'react-router-dom';
+import { notAuthenticatedState } from '../../fixtures/authFixtures';
 
 const mockStartGoogleSignIn = jest.fn();
 
@@ -18,9 +19,9 @@ const store = configureStore({
     reducer: {
         auth: authSlice.reducer
     },
-    // preloadedState: {
-    //     auth: notAuthenticatedState
-    // }
+    preloadedState: {
+        auth: notAuthenticatedState
+    }
 })
 
 describe('Pruebas en <LoginPage />', () => {
